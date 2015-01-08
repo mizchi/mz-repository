@@ -21,6 +21,9 @@ class MinimongoAdapter.Collection extends Repositoty.Collection
 
   findById: (id) -> @findOne({_id: id})
 
+  exists: (id) -> new Promise (done) =>
+    @findOne({_id: id}).then (obj) => done !!obj
+
   save: (obj) -> new Promise (done) =>
     @col.upsert obj, (item) => done(item)
 

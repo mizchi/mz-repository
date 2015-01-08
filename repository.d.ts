@@ -18,8 +18,11 @@ declare module Repository {
     findById(id: Id): Thenable<T>;
     where(query: any): Thenable<T[]>;
     findOne(query: any): Thenable<T>;
+    exists(id: Id): Thenable<boolean>;
 
     save(t: T): Thenable<T>;
+    save(ts: T[]): Thenable<T[]>;
     remove(id: Id): Thenable<any>;
+    remove(ids: Id[]): Thenable<any>;
   }
 }

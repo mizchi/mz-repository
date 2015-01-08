@@ -65,6 +65,18 @@ MinimongoAdapter.Collection = (function(_super) {
     });
   };
 
+  Collection.prototype.exists = function(id) {
+    return new Promise((function(_this) {
+      return function(done) {
+        return _this.findOne({
+          _id: id
+        }).then(function(obj) {
+          return done(!!obj);
+        });
+      };
+    })(this));
+  };
+
   Collection.prototype.save = function(obj) {
     return new Promise((function(_this) {
       return function(done) {
