@@ -1,6 +1,5 @@
-type Id = string;
-
-declare class Repository {
+declare module Repository {
+  type Id = string;
   export interface Thenable<R> {
     then<U>(onFulfilled?: (value: R) => Thenable<U>,  onRejected?: (error: any) => Thenable<U>): Thenable<U>;
     then<U>(onFulfilled?: (value: R) => Thenable<U>, onRejected?: (error: any) => U): Thenable<U>;
@@ -10,17 +9,17 @@ declare class Repository {
     then<U>(onFulfilled?: (value: R) => U, onRejected?: (error: any) => void): Thenable<U>;
   }
 
-  declare class Database {
+  export class Database {
     getCollection<T>(name: string): Collection<T>;
   }
 
-  declare class Collection<T> {
-    find(id: ID): Thenable<T>;
-    findById(id: ID): Thenable<T>;
+  export class Collection<T> {
+    find(id: Id): Thenable<T>;
+    findById(id: Id): Thenable<T>;
     where(query: any): Thenable<T[]>;
     findOne(query: any): Thenable<T>;
 
     save(t: T): Thenable<T>;
-    remove(id: ID): Thenable<any>;
+    remove(id: Id): Thenable<any>;
   }
 }
