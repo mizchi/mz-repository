@@ -19,7 +19,7 @@ declare module Repository {
     where(query: any): Thenable<T[]>;
     findOne(query: any): Thenable<T>;
     exists(id: Id): Thenable<boolean>;
-
+    all(): Thenable<T[]>;
     save(t: T): Thenable<T>;
     save(ts: T[]): Thenable<T[]>;
     remove(id: Id): Thenable<any>;

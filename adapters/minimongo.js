@@ -97,6 +97,10 @@ MinimongoAdapter.Collection = (function(_super) {
     })(this));
   };
 
+  Collection.prototype.all = function() {
+    return this.where({});
+  };
+
   return Collection;
 
 })(Repositoty.Collection);
@@ -132,15 +136,15 @@ Repositoty.Collection = (function() {
 
   Collection.prototype.save = function() {};
 
+  Collection.prototype.exists = function() {};
+
+  Collection.prototype.all = function() {};
+
   Collection.prototype.where = function() {};
 
   Collection.prototype.findOne = function() {};
 
   Collection.prototype.remove = function() {};
-
-  Collection.prototype.validate = function() {
-    return true;
-  };
 
   return Collection;
 

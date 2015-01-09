@@ -30,4 +30,6 @@ class MinimongoAdapter.Collection extends Repositoty.Collection
   remove: -> new Promise (done) =>
     @col.remove obj, => done()
 
+  all: -> @where({})
+
 module.exports = MinimongoAdapter

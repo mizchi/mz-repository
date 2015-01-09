@@ -8,7 +8,8 @@ class Repositoty.Collection
   find: ->
   findById: ->
   save: ->
+  exists: ->
+  all: ->
   where: ->
   findOne: ->
   remove: ->
-  validate: -> true
