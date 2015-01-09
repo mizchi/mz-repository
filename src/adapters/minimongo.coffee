@@ -27,7 +27,7 @@ class MinimongoAdapter.Collection extends Repositoty.Collection
   save: (obj) -> new Promise (done) =>
     @col.upsert obj, (item) => done(item)
 
-  remove: -> new Promise (done) =>
+  remove: (obj) -> new Promise (done) =>
     @col.remove obj, => done()
 
   all: -> @where({})

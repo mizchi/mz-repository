@@ -87,7 +87,7 @@ MinimongoAdapter.Collection = (function(_super) {
     })(this));
   };
 
-  Collection.prototype.remove = function() {
+  Collection.prototype.remove = function(obj) {
     return new Promise((function(_this) {
       return function(done) {
         return _this.col.remove(obj, function() {
