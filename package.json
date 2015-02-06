@@ -1,8 +1,8 @@
 {
   "name": "mz-repository",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "DDD Repository Pattern implementation",
-  "main": "lib/index.js",
+  "main": "adapters/minimongo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
